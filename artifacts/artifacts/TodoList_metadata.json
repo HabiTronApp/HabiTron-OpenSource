@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.1+commit.df193b15"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getTodos",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_todos",
+						"type": "string"
+					}
+				],
+				"name": "saveTodos",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TodoList.sol": "TodoList"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"TodoList.sol": {
+			"keccak256": "0x8e6387c31341e6c60ef5ba4092cac3119a4d862e9cd9d4cced69ed2fc55ff128",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2abae7b415df95195637822b3952067879fb97836b895ee887ed55bd53b354d8",
+				"dweb:/ipfs/QmVBX1DKQzPLb8wc1NzfvmgMkPjdBYMPMWBizs12EQDek9"
+			]
+		}
+	},
+	"version": 1
+}

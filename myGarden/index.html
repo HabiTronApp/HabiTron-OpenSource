@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabiTron Garden</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.umd.min.js"></script>
+</head>
+
+<body>
+
+    <div id="goBackButton">
+        <button onclick="goBack()" class="styled-button" type="button">
+            <div class="green-hover-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="25px" width="25px">
+                    <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z" fill="#000000"></path>
+                    <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z" fill="#000000"></path>
+                </svg>
+            </div>
+            <p class="translate-x-2"><strong>HabiTron</strong></p>
+        </button>
+    </div>
+
+    <div id="walletInfo">
+        <div id="walletAddress">Not Connected</div>
+        <div id="coinDisplay">
+            <img src="coin.png" alt="Coin" class="coin-icon">
+            <span id="coinCount"></span>
+        </div>
+    </div>
+
+    <div id="gardenBackground" style="display: none;">
+        <div class="farm-grid">
+
+            <div class="plot" id="plot1" onclick="growPlant('plot1')"></div>
+            <div class="plot" id="plot2" onclick="growPlant('plot2')"></div>
+            <div class="plot" id="plot3" onclick="growPlant('plot3')"></div>
+            <div class="plot" id="plot4" onclick="growPlant('plot4')"></div>
+            <div class="plot" id="plot5" onclick="growPlant('plot5')"></div>
+            <div class="plot" id="plot6" onclick="growPlant('plot6')"></div>
+            <div class="plot" id="plot7" onclick="growPlant('plot7')"></div>
+            <div class="plot" id="plot8" onclick="growPlant('plot8')"></div>
+            <div class="plot" id="plot9" onclick="growPlant('plot9')"></div>
+            <div class="plot" id="plot10" onclick="growPlant('plot10')"></div>
+            <div class="plot" id="plot11" onclick="growPlant('plot11')"></div>
+            <div class="plot" id="plot12" onclick="growPlant('plot12')"></div>
+            <div class="plot" id="plot13" onclick="growPlant('plot13')"></div>
+            <div class="plot" id="plot14" onclick="growPlant('plot14')"></div>
+            <div class="plot" id="plot15" onclick="growPlant('plot15')"></div>
+            <div class="plot" id="plot16" onclick="growPlant('plot16')"></div>
+            <div class="plot" id="plot17" onclick="growPlant('plot17')"></div>
+            <div class="plot" id="plot18" onclick="growPlant('plot18')"></div>
+            <div class="plot" id="plot19" onclick="growPlant('plot19')"></div>
+            <div class="plot" id="plot20" onclick="growPlant('plot20')"></div>
+        </div>
+    </div>
+
+    <div id="plantChoiceModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h2>Choose a Plant</h2>
+            <button id="chooseTomato" class="plant-choice-btn">Tomato</button>
+            <button id="chooseSunflower" class="plant-choice-btn">Sunflower</button>
+        </div>
+    </div>
+
+    <div class="button-container">
+
+        <button id="saveButton">Save Garden</button>
+
+        <button id="claimCoinButton" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Claim 1 Coin</button>
+    </div>
+
+    <script src="garden.js"></script>
+
+    <script>
+        function goBack() {
+            window.location.href = "../";
+        }
+    </script>
+
+</body>
+
+</html>

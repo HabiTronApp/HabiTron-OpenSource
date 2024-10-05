@@ -1,0 +1,118 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "claimCoin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "gardens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "coins",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGarden",
+				"outputs": [
+					{
+						"internalType": "uint8[20]",
+						"name": "",
+						"type": "uint8[20]"
+					},
+					{
+						"internalType": "uint8[20]",
+						"name": "",
+						"type": "uint8[20]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8[20]",
+						"name": "_plotStages",
+						"type": "uint8[20]"
+					},
+					{
+						"internalType": "uint8[20]",
+						"name": "_plotTypes",
+						"type": "uint8[20]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_coins",
+						"type": "uint256"
+					}
+				],
+				"name": "saveGarden",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Habitron-myGarden.sol": "HabiTronGarden"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Habitron-myGarden.sol": {
+			"keccak256": "0xf1c1fada28e14d8ce61f7907235dd638ed6d4e5dd75159308e3f466858890c3f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8f0f528435cae271387912132810b42613bb2b32e493bff1f32c1d980e8633ad",
+				"dweb:/ipfs/QmdD147wgJ7Frd4y1F3Re38tKoEWR6h5h5yb1pNf3Y7RfW"
+			]
+		}
+	},
+	"version": 1
+}

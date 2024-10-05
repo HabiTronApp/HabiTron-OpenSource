@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/todo.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.umd.min.js"></script>
+
+    <meta name="description" content="Manage your daily tasks efficiently with HabiTron's To-Do List. Save tasks on BTTC and access them from anywhere.">
+    <meta name="keywords" content="To-Do list, task manager, HabiTron, BTTC, productivity, MetaMask, daily tasks">
+    <meta name="author" content="HabiTron Team">
+    <meta property="og:title" content="HabiTron - To-Do List on Blockchain">
+    <meta property="og:description" content="Keep track of your daily tasks with HabiTron To-Do List. Save and manage tasks securely on BTTC.">
+    <meta property="og:url" content="https://habitronapp.com/to-do.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HabiTron - Manage Your Tasks on Blockchain">
+    <meta name="twitter:description" content="Easily manage and save your daily tasks using HabiTron's To-Do List on BTTC. Keep your productivity on track.">
+
+
+    <link rel="icon" type="image/svg+xml" href="habitron_logo.png">
+
+    <title>HabiTron - To-Do List</title>
+</head>
+
+<body>
+
+    <div id="goBackButton">
+        <button onclick="goBack()" class="styled-button" type="button">
+            <div class="green-hover-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="25px" width="25px">
+                    <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z" fill="#000000"></path>
+                    <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z" fill="#000000"></path>
+                </svg>
+            </div>
+            <p class="translate-x-2"><strong>HabiTron</strong></p>
+        </button>
+    </div>
+
+    <div class="dark-light-switch">
+        <label for="switch" class="switch">
+            <input id="switch" type="checkbox" />
+            <span class="slider"></span>
+            <span class="decoration"></span>
+        </label>
+    </div>
+
+    <div id="blackScreen" style="display: flex; justify-content: center; align-items: center;">
+        <button id="connectWalletBtn" class="connect-btn">Connect MetaMask Wallet</button>
+    </div>
+
+    <div class="container mainContent" id="mainContent" style="display: none;">
+        <header>
+            <h1>Todo List</h1>
+            <div class="alert-message"></div>
+            <div class="input-section">
+                <input type="text" placeholder="Add a todo . . ." class="input input-bordered input-secondary w-full max-w-xs" />
+                <input type="date" class="input input-bordered input-secondary w-full max-w-xs schedule-date" />
+                <button class="btn btn-green add-task-button">
+                    <i class="bx bx-plus bx-sm"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="todos-filter">
+            <button class="btn btn-green delete-all-btn">Delete All</button>
+            <button class="btn btn-green save-bttc-btn">Save in BTTC</button>
+        </div>
+
+        <table class="table w-full">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="todos-list-body"></tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="author-text">
+            <p>Reach us: <a href="team@habitronapp.com" target="_blank"><b>team@habitronapp.com</b></a></p>
+        </div>
+    </footer>
+
+    <script src="./js/todo.js"></script>
+    <script src="./js/smart-contract.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = "../";
+        }
+
+        const toggleSwitch = document.querySelector('#switch');
+        toggleSwitch.addEventListener('change', () => {
+            if (toggleSwitch.checked) {
+                document.body.classList.remove('dark-mode');
+            } else {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    </script>
+</body>
+
+</html>

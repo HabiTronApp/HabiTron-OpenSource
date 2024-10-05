@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabiTron</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.umd.min.js"></script>
+
+    <meta name="description" content="HabiTron - Track your daily habits and progress effortlessly. Save your habits securely on BTTC and achieve your goals.">
+    <meta name="keywords" content="HabiTron, habit tracker, BTTC, blockchain, MetaMask, productivity, daily habits, track progress">
+    <meta name="author" content="HabiTron Team">
+    <meta property="og:title" content="HabiTron - Your Habit Tracker on Blockchain">
+    <meta property="og:description" content="Track and save your daily habits with HabiTron using blockchain technology on BTTC. Secure and easy habit management.">
+    <meta property="og:url" content="https://habitronapp.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HabiTron - Habit Tracker on Blockchain">
+    <meta name="twitter:description" content="Save and track your habits using blockchain technology with HabiTron. A seamless way to manage your progress daily.">
+
+    <link rel="icon" type="image/svg+xml" href="habitron_logo.png">
+</head>
+
+<body>
+
+    <div id="blackScreen">
+        <img src="blackbackground.png" alt="Black Background" class="background-img">
+        <button id="connectWalletBtn" class="connect-btn">Connect MetaMask Wallet</button>
+    </div>
+
+    <div id="dailyCheckCountsDiv" style="display: none;">Daily: </div>
+
+    <div id="mainContent" style="display: none;">
+        <div class="header">
+            <div class="left-header">
+                <div class="logo">HabiTron</div>
+                <div class="month-year" id="monthYear">October 2024</div>
+            </div>
+            <div class="right-header">
+                <a href="./myGarden/"><img src="MyGarden.png" alt="My Garden" class="garden-img"></a>
+                <a href="to-do.html" class="todo-link">To-Do List</a>
+
+                <label for="switch" class="switch">
+                    <input id="switch" type="checkbox" />
+                    <span class="slider"></span>
+                    <span class="decoration"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="habitChart"></canvas>
+        </div>
+
+        <div class="container">
+            <div class="habit-table">
+                <table id="habitTable">
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <button id="saveButton" class="save-btn">Save Habits</button>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const switchElement = document.getElementById("switch");
+
+            switchElement.addEventListener("change", function() {
+                if (switchElement.checked) {
+
+                    document.body.style.backgroundColor = "#f5f5f5";
+                    document.body.style.color = "#000";
+                    document.getElementById("habitTable").style.backgroundColor = "#fff";
+                    document.getElementById("habitTable").style.color = "#000";
+
+                    document.querySelector(".logo").style.color = "#4CAF50";
+                    document.querySelector(".month-year").style.color = "#333";
+
+                    document.querySelectorAll("th").forEach(th => th.style.backgroundColor = "#4CAF50");
+                    document.querySelectorAll("th").forEach(th => th.style.color = "#fff");
+                    document.querySelectorAll("td").forEach(td => td.style.backgroundColor = "#fff");
+                    document.querySelectorAll("td").forEach(td => td.style.color = "#000");
+
+                    document.getElementById("saveButton").style.backgroundColor = "#4CAF50";
+                    document.getElementById("saveButton").style.color = "#fff";
+
+                } else {
+
+                    document.body.style.backgroundColor = "#20262c";
+                    document.body.style.color = "#fff";
+                    document.getElementById("habitTable").style.backgroundColor = "#333";
+                    document.getElementById("habitTable").style.color = "#fff";
+
+                    document.querySelector(".logo").style.color = "#fff";
+                    document.querySelector(".month-year").style.color = "#fff";
+
+                    document.querySelectorAll("th").forEach(th => th.style.backgroundColor = "#444");
+                    document.querySelectorAll("th").forEach(th => th.style.color = "#fff");
+                    document.querySelectorAll("td").forEach(td => td.style.backgroundColor = "#555");
+                    document.querySelectorAll("td").forEach(td => td.style.color = "#fff");
+
+                    document.getElementById("saveButton").style.backgroundColor = "#4CAF50";
+                    document.getElementById("saveButton").style.color = "#fff";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

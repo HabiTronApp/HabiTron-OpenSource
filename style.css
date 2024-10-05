@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e8f5e9;
+    color: #333;
+}
+
+#blackScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.background-img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.connect-btn {
+    z-index: 10;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.connect-btn:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+
+#mainContent {
+    display: none;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+.month-year {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: #333;
+}
+
+.garden-img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.garden-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.todo-link {
+    font-size: 18px;
+    color: #2E7D32;
+    text-decoration: none;
+    border: 2px solid #2E7D32;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.todo-link:hover {
+    background-color: #2E7D32;
+    color: white;
+    transform: scale(1.05);
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.habit-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox .checkmark {
+    position: relative;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background-color: #f9f9f9;
+    border: 2px solid #4CAF50;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 4px;
+    bottom: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+@media only screen and (max-width: 768px) {
+    .chart-container {
+        height: 250px;
+    }
+
+    .habit-table {
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .month-year {
+        font-size: 18px;
+    }
+
+    .garden-img {
+        width: 120px;
+    }
+}
+
+button {
+    background-color: #2E7D32;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    --background: #20262c;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #ececd9, -4px 1px 4px 0px #dadada;
+    background: var(--background);
+    transition: 0.5s;
+}
+
+.decoration {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    right: 20%;
+    top: 15%;
+    background: #e5f041e6;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s;
+    box-shadow: -7px 10px 0 #e5f041e6, 8px 15px 0 #e5f041e6, -17px 1px 0 #e5f041e6,
+        -20px 10px 0 #e5f041e6, -7px 23px 0 #e5f041e6, -15px 25px 0 #e5f041e6;
+}
+
+input:checked~.decoration {
+    transform: translateX(-20px);
+    width: 10px;
+    height: 10px;
+    background: white;
+    box-shadow: -12px 0 0 white, -6px 0 0 1.6px white, 5px 15px 0 1px white,
+        1px 17px 0 white, 10px 17px 0 white;
+}
+
+input:checked+.slider {
+    background-color: #5494de;
+}
+
+input:checked+.slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #efdf2b, 0 0 10px 0px #efdf2b;
+}

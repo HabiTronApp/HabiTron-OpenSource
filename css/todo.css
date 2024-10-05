@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #faf3e0;
+    color: #faf3e0;
+}
+
+#goBackButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.styled-button {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green-hover-box {
+    background-color: #4CAF50;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: width 0.3s;
+}
+
+.styled-button:hover .green-hover-box {
+    width: 100px;
+}
+
+.styled-button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.dark-light-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #faf3e0;
+}
+
+.dark-mode .input-section input,
+.dark-mode .btn-green {
+    background-color: #444 !important;
+    border-color: #444 !important;
+    color: white !important;
+}
+
+.dark-mode table th,
+.dark-mode table td {
+    color: white;
+}
+
+.author-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 400px;
+    min-width: 640px;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    color: #faf3e0;
+}
+
+.container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.input-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todos-filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.todos-list {
+    width: 100%;
+}
+
+.btn-green {
+    background-color: #228B22 !important;
+    border-color: #228B22 !important;
+    color: white !important;
+}
+
+.btn-green:hover {
+    background-color: #004d00 !important;
+    border-color: #004d00 !important;
+}
+
+.table th,
+.table td {
+    color: #faf3e0;
+}
+
+@media only screen and (max-width: 530px) {
+    .container {
+        margin: 0 20px;
+        max-width: 96%;
+        min-width: 96%;
+    }
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    --background: #20262c;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #ececd9, -4px 1px 4px 0px #dadada;
+    background: var(--background);
+    transition: 0.5s;
+}
+
+.decoration {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    right: 20%;
+    top: 15%;
+    background: #e5f041e6;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s;
+    box-shadow: -7px 10px 0 #e5f041e6, 8px 15px 0 #e5f041e6, -17px 1px 0 #e5f041e6,
+        -20px 10px 0 #e5f041e6, -7px 23px 0 #e5f041e6, -15px 25px 0 #e5f041e6;
+}
+
+input:checked+.slider {
+    background-color: #5494de;
+}
+
+input:checked+.slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #efdf2b, 0 0 10px 0px #efdf2b;
+}

@@ -1,0 +1,119 @@
+{
+	"compiler": {
+		"version": "0.8.1+commit.df193b15"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getHabits",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "habitName",
+								"type": "string"
+							},
+							{
+								"internalType": "uint8[31]",
+								"name": "checkboxStatus",
+								"type": "uint8[31]"
+							}
+						],
+						"internalType": "struct HabitTracker.HabitData[20]",
+						"name": "",
+						"type": "tuple[20]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[20]",
+						"name": "_habitNames",
+						"type": "string[20]"
+					},
+					{
+						"internalType": "uint8[31][20]",
+						"name": "_checkboxes",
+						"type": "uint8[31][20]"
+					}
+				],
+				"name": "saveHabits",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "userHabits",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "habitName",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Habit_Tracker.sol": "HabitTracker"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Habit_Tracker.sol": {
+			"keccak256": "0x7343d1ed5820794552bd88ae43fb23755146761e783ff1304bb7a1b6e8c4204f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6112f66462b32837daf951a391b18468e93498b51e1e2eaf5533b9c66363626b",
+				"dweb:/ipfs/QmSiQcV6LNR6LDqSYuKuCbCJyj2w6Ar34DyNckRKvnYAC6"
+			]
+		}
+	},
+	"version": 1
+}
